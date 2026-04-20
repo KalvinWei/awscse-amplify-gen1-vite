@@ -97,7 +97,7 @@ function TripNotesApp({
   async function onCallRest() {
     setRestResponse('Calling...')
     try {
-      const op = get({ apiName: 'tripnotesrest', path: '/public/trips' })
+      const op = get({ apiName: 'tripnotesrest-gen2-main', path: '/public/trips' })
       const { body } = await op.response
       const text = await body.text()
       setRestResponse(text)
