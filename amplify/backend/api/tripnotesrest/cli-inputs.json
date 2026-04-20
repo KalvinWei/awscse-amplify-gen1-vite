@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "paths": {
+    "/public/trips": {
+      "name": "/public/trips",
+      "lambdaFunction": "tripsummarydaily",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "guest": [
+          "read"
+        ]
+      }
+    }
+  }
+}
