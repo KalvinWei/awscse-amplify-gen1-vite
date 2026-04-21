@@ -148,6 +148,11 @@ backend.addOutput({
 });
 const cfnUserPool = backend.auth.resources.cfnResources.cfnUserPool;
 cfnUserPool.usernameAttributes = ['email'];
+// Ensure public signup is allowed (Gen2 `defineAuth` defaults to admin-only,
+// which doesn't match the Gen1 setup where signup was enabled).
+cfnUserPool.adminCreateUserConfig = {
+  allowAdminCreateUserOnly: false,
+};
 cfnUserPool.policies = {
   passwordPolicy: {
     minimumLength: 8,
