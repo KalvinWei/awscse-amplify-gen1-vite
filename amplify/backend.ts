@@ -189,7 +189,7 @@ backend.data.resources.graphqlApi.grantQuery(
 );
 const s3Bucket = backend.storage.resources.cfnResources.cfnBucket;
 // Use this bucket name post refactor
-// s3Bucket.bucketName = 'tripnotes-photos-869935107373f34fa-main';
+s3Bucket.bucketName = 'tripnotes-photos-869935107373f34fa-main';
 s3Bucket.bucketEncryption = {
   serverSideEncryptionConfiguration: [
     {
